@@ -16,7 +16,6 @@ import pandas as pd
 import plotly.graph_objects as go
 from openbb_core.app.model.charts.charting_settings import ChartingSettings
 from packaging import version
-from reportlab.graphics import renderPDF
 
 # pylint: disable=C0415
 try:
@@ -220,6 +219,8 @@ class Backend(PyWry):
 
     async def process_image(self, export_image: Path):
         """Check if the image has been exported to the path."""
+        from reportlab.graphics import renderPDF
+
         pdf = export_image.suffix == ".pdf"
         img_path = export_image.resolve()
 
