@@ -13,6 +13,7 @@ from openbb_core.app.constants import (
     SYSTEM_SETTINGS_PATH,
     USER_SETTINGS_PATH,
 )
+
 # from openbb_core.app.logs.utils.system_utils import get_commit_hash
 from openbb_core.app.model.abstract.tagged import Tagged
 
@@ -109,7 +110,7 @@ class SystemSettings(Tagged):
                 raise ValueError("Invalid logging handler")
         return v
 
-    @validator("logging_commit_hash", allow_reuse=True, always=True)
-    @classmethod
-    def validate_commit_hash(cls, v):
-        return v or get_commit_hash()
+    # @validator("logging_commit_hash", allow_reuse=True, always=True)
+    # @classmethod
+    # def validate_commit_hash(cls, v):
+    #     return v or get_commit_hash()
