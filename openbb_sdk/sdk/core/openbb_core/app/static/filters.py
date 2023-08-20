@@ -3,7 +3,7 @@
 import builtins
 from functools import wraps
 
-import pandas as pd
+import polars as pd
 from pydantic import ValidationError
 
 from openbb_core.app.model.abstract.error import OpenBBError

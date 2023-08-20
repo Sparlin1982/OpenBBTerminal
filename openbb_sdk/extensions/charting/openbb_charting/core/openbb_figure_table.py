@@ -1,6 +1,6 @@
 from typing import List, Optional, Union
 
-import pandas as pd
+import polars as pd
 from openbb_charting.core.openbb_figure import OpenBBFigure
 
 

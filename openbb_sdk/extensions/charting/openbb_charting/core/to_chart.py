@@ -1,6 +1,6 @@
 from typing import Any, Dict, Optional, Tuple, Union
 
-import pandas as pd
+import polars as pd
 from openbb_charting.core.openbb_figure import OpenBBFigure
 from openbb_charting.core.plotly_ta.data_classes import ChartIndicators
 from openbb_charting.core.plotly_ta.ta_class import PlotlyTA

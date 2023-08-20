@@ -21,7 +21,7 @@ from typing import (
     get_type_hints,
 )
 
-import pandas as pd
+import polars as pd
 from pydantic.fields import ModelField
 from starlette.routing import BaseRoute
 from typing_extensions import Annotated, _AnnotatedAlias

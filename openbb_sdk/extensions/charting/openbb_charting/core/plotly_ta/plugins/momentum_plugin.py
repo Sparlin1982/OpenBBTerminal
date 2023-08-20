@@ -1,7 +1,7 @@
 import warnings
 
 import numpy as np
-import pandas as pd
+import polars as pd
 import pandas_ta as ta
 from openbb_charting.core.openbb_figure import OpenBBFigure
 from openbb_charting.core.plotly_ta.base import (

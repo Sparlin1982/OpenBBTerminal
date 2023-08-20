@@ -1,7 +1,7 @@
 from typing import List, Literal
 
 import numpy as np
-import pandas as pd
+import polars as pd
 from openbb_core.app.model.obbject import OBBject
 from openbb_core.app.model.results.empty import Empty
 from openbb_core.app.router import Router

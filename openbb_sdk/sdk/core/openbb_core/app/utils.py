@@ -1,6 +1,6 @@
 from typing import List, Optional, Union
 
-import pandas as pd
+import polars as pd
 from openbb_provider.abstract.data import Data
 
 

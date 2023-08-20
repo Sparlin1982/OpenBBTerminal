@@ -4,7 +4,7 @@ from io import BytesIO
 from urllib.request import urlopen
 from zipfile import ZipFile
 
-import pandas as pd
+import polars as pd
 
 
 # ruff: ignore=S310

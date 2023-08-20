@@ -7,7 +7,7 @@ from typing import List, Optional, Tuple
 from io import StringIO
 
 import numpy as np
-import pandas as pd
+import polars as pd
 import requests
 import requests_cache
 

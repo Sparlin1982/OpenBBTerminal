@@ -1,7 +1,7 @@
 import re
 from typing import Optional
 
-import pandas as pd
+import polars as pd
 
 
 def check_columns(

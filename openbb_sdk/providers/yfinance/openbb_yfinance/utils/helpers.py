@@ -8,7 +8,7 @@ from datetime import (
 from pathlib import Path
 from typing import Optional
 
-import pandas as pd
+import polars as pd
 import yfinance as yf
 from dateutil.relativedelta import relativedelta
 

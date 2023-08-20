@@ -1,6 +1,6 @@
 from typing import Any, List, Optional
 
-import pandas as pd
+import polars as pd
 
 # Vsurf Plot Settings
 PLT_3DMESH_COLORSCALE = "Jet"
