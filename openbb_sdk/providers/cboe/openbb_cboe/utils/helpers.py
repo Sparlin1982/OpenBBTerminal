@@ -8,15 +8,15 @@ from io import StringIO
 
 import numpy as np
 import pandas as pd
-import requests
-import requests_cache
+# import requests
+# import requests_cache
 
 TICKER_EXCEPTIONS = ["NDX", "RUT"]
 # This will cache the import requests for 7 days.  Ideally to speed up subsequent imports.
 # Only used on functions run on import
-cboe_session = requests_cache.CachedSession(
-    "OpenBB_CBOE", expire_after=timedelta(days=7), use_cache_dir=True
-)
+# cboe_session = requests_cache.CachedSession(
+#     "OpenBB_CBOE", expire_after=timedelta(days=7), use_cache_dir=True
+# )
 
 
 def get_user_agent() -> str:
@@ -34,48 +34,48 @@ def get_user_agent() -> str:
     return np.random.choice(user_agent_strings)  # nosec
 
 
-def request(
-    url: str, method: str = "GET", timeout: int = 10, **kwargs
-) -> requests.Response:
-    """Abstract helper to make requests from a url with potential headers and params.
+# def request(
+#     url: str, method: str = "GET", timeout: int = 10, **kwargs
+# ) -> requests.Response:
+#     """Abstract helper to make requests from a url with potential headers and params.
 
-    Parameters
-    ----------
-    url : str
-        Url to make the request to
-    method : str, optional
-        HTTP method to use.  Can be "GET" or "POST", by default "GET"
-    timeout : int, optional
-        Timeout in seconds, by default 10
+#     Parameters
+#     ----------
+#     url : str
+#         Url to make the request to
+#     method : str, optional
+#         HTTP method to use.  Can be "GET" or "POST", by default "GET"
+#     timeout : int, optional
+#         Timeout in seconds, by default 10
 
-    Returns
-    -------
-    requests.Response
-        Request response object
+#     Returns
+#     -------
+#     requests.Response
+#         Request response object
 
-    Raises
-    ------
-    ValueError
-        If invalid method is passed
-    """
+#     Raises
+#     ------
+#     ValueError
+#         If invalid method is passed
+#     """
 
-    # If there are headers, check if there is a user agent, if not add one.
-    # Some requests seem to work only with a specific user agent, so we want to be able to override it.
-    headers = kwargs.pop("headers", {})
+#     # If there are headers, check if there is a user agent, if not add one.
+#     # Some requests seem to work only with a specific user agent, so we want to be able to override it.
+#     headers = kwargs.pop("headers", {})
 
-    if "User-Agent" not in headers:
-        headers["User-Agent"] = get_user_agent()
+#     if "User-Agent" not in headers:
+#         headers["User-Agent"] = get_user_agent()
 
-    if (func := getattr(requests, method.lower(), None)) is not None:
+#     if (func := getattr(requests, method.lower(), None)) is not None:
 
-        return func(
-            url,
-            headers=headers,
-            timeout=timeout,
-            **kwargs,
-        )
+#         return func(
+#             url,
+#             headers=headers,
+#             timeout=timeout,
+#             **kwargs,
+#         )
 
-    raise ValueError("Method must be valid HTTP method")
+#     raise ValueError("Method must be valid HTTP method")
 
 
 def camel_to_snake(string: str) -> str:
@@ -170,15 +170,18 @@ def get_cboe_index_directory() -> pd.DataFrame:
         return pd.DataFrame()
 
 
-INDEXES = get_cboe_index_directory().index.tolist()
+# INDEXES = get_cboe_index_directory().index.tolist()
+INDEXES = []
 SYMBOLS = pd.DataFrame()
-try:
-    SYMBOLS = get_cboe_directory()
-except SYMBOLS.empty:
-    current_dir = os.path.dirname(os.path.realpath(__file__))
-    file = "cboe_companies.json"
-    SYMBOLS = pd.read_json(Path(current_dir, file))
-
+# try:
+#     SYMBOLS = get_cboe_directory()
+# except SYMBOLS.empty:
+#     current_dir = os.path.dirname(os.path.realpath(__file__))
+#     file = "cboe_companies.json"
+#     SYMBOLS = pd.read_json(Path(current_dir, file))
+current_dir = os.path.dirname(os.path.realpath(__file__))
+file = "cboe_companies.json"
+SYMBOLS = pd.read_json(Path(current_dir, file))
 
 def stock_search(query: str, ticker: bool = False) -> dict:
     """Search the CBOE company directory by name or ticker.
