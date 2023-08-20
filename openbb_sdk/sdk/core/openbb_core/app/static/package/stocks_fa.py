@@ -1604,7 +1604,7 @@ class CLASS_stocks_fa(Container):
             Date of the income statement.
         symbol : Optional[str]
             Symbol of the company.
-        cik : Optional[int]
+        cik : Optional[str]
             Central Index Key.
         currency : Optional[str]
             Reporting currency.
