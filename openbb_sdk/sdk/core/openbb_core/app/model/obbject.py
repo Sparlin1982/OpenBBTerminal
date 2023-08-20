@@ -1,6 +1,6 @@
 from typing import Dict, Generic, List, Optional, TypeVar, Union
 
-import polars as pd
+import pandas as pd
 from pydantic import Field
 from pydantic.generics import GenericModel
 

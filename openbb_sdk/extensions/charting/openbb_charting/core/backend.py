@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any, Dict, Optional, Union
 
 import aiohttp
-import polars as pd
+import pandas as pd
 import plotly.graph_objects as go
 from openbb_core.app.model.charts.charting_settings import ChartingSettings
 from packaging import version

@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, patch
 
-import polars as pd
+import pandas as pd
 import pytest
 from openbb_core.app.model.obbject import Chart, OBBject, OpenBBError
 from openbb_provider.abstract.data import Data

@@ -1,6 +1,6 @@
 from typing import List, Literal, Optional
 
-import polars as pd
+import pandas as pd
 from openbb_core.app.model.obbject import OBBject
 from openbb_core.app.model.results.empty import Empty
 from openbb_core.app.router import Router

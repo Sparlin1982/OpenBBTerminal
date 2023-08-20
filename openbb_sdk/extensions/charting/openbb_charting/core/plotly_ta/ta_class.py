@@ -6,7 +6,7 @@ import warnings
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Type, Union
 
-import polars as pd
+import pandas as pd
 from openbb_charting.core.chart_style import ChartStyle
 from openbb_charting.core.openbb_figure import OpenBBFigure
 from openbb_core.app.model.charts.charting_settings import ChartingSettings

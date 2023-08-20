@@ -1,6 +1,6 @@
 from typing import Any, Callable, Dict, Iterator, List, Optional, Type
 
-import polars as pd
+import pandas as pd
 
 from .data_classes import ChartIndicators, TAIndicator
 

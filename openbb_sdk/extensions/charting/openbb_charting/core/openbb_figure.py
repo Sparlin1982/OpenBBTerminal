@@ -19,7 +19,7 @@ from typing import (
 from warnings import warn
 
 import numpy as np
-import polars as pd
+import pandas as pd
 import plotly.graph_objects as go
 import plotly.io as pio
 from openbb_charting.core.backend import PLOTLYJS_PATH, get_backend

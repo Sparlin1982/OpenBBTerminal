@@ -2,7 +2,7 @@ import warnings
 from typing import Any, Literal, Optional, Tuple
 
 import numpy as np
-import polars as pd
+import pandas as pd
 
 _warn = warnings.warn
 
