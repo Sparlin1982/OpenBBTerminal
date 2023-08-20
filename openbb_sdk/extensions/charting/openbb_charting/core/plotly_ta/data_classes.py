@@ -6,7 +6,6 @@ from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Union
 
 import pandas as pd
-import pandas_ta as ta
 
 from .ta_helpers import check_columns
 
@@ -254,6 +253,8 @@ class TA_Data:
         pd.DataFrame
             Dataframe with indicator data
         """
+        import pandas_ta as ta
+
         output = None
         if indicator and indicator.name in self.ma_mode:
             if isinstance(indicator.get_argument_values("length"), list):

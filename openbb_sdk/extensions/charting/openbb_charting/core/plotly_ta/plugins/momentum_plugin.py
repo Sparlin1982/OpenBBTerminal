@@ -2,7 +2,6 @@ import warnings
 
 import numpy as np
 import pandas as pd
-import pandas_ta as ta
 from openbb_charting.core.openbb_figure import OpenBBFigure
 from openbb_charting.core.plotly_ta.base import (
     PltTA,
@@ -190,6 +189,8 @@ class Momentum(PltTA):
     @indicator()
     def plot_demark(self, fig: OpenBBFigure, df_ta: pd.DataFrame, inchart_index: int):
         """Add demark to plotly figure."""
+        import pandas_ta as ta
+
         min_val = self.params["demark"].get_argument_values("min_val") or 5
 
         demark = ta.td_seq(df_ta[self.close_column], asint=True)
